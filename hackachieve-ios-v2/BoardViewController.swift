@@ -56,37 +56,38 @@ extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 if(cell.boardCategoryLabel.text == "Health"){
                     cell.boardCategoryLabel.textColor = UIColorFromHex(rgbValue: 0x5FC9E0)
                     cell.boardDescriptionLabel.textColor = UIColorFromHex(rgbValue: 0x5FC9E0)
-                    cell.borderColor = UIColorFromHex(rgbValue: 0x5FC9E0)
+                    cell.borderTop.backgroundColor = UIColorFromHex(rgbValue: 0x5FC9E0)
+                    
                 } else if(cell.boardCategoryLabel.text == "Spiritual"){
                     cell.boardCategoryLabel.textColor = UIColorFromHex(rgbValue: 0x786FB3)
                     cell.boardDescriptionLabel.textColor = UIColorFromHex(rgbValue: 0x786FB3)
-                    cell.borderColor = UIColorFromHex(rgbValue: 0x786FB3)
+                    cell.borderTop.backgroundColor = UIColorFromHex(rgbValue: 0x786FB3)
                     cell.boardCategoryIcon.image = UIImage(named: "spiritual-icon-color")
                 } else if(cell.boardCategoryLabel.text == "Finances"){
                     cell.boardCategoryLabel.textColor = UIColorFromHex(rgbValue: 0xE69E56)
                     cell.boardDescriptionLabel.textColor = UIColorFromHex(rgbValue: 0xE69E56)
                     cell.boardCategoryIcon.image = UIImage(named: "finances-icon-color")
-                    cell.borderColor = UIColorFromHex(rgbValue: 0xE69E56)
+                    cell.borderTop.backgroundColor = UIColorFromHex(rgbValue: 0xE69E56)
                 } else if(cell.boardCategoryLabel.text == "Personal Development"){
                     cell.boardCategoryLabel.textColor = UIColorFromHex(rgbValue: 0xF05765)
                     cell.boardDescriptionLabel.textColor = UIColorFromHex(rgbValue: 0xF05765)
                     cell.boardCategoryIcon.image = UIImage(named: "personal-dev-icon-color")
-                    cell.borderColor = UIColorFromHex(rgbValue: 0xF05765)
+                    cell.borderTop.backgroundColor = UIColorFromHex(rgbValue: 0xF05765)
                 } else if(cell.boardCategoryLabel.text == "Career"){
                     cell.boardCategoryLabel.textColor = UIColorFromHex(rgbValue: 0x4060CC)
                     cell.boardDescriptionLabel.textColor = UIColorFromHex(rgbValue: 0x4060CC)
                     cell.boardCategoryIcon.image = UIImage(named: "career-icon-color")
-                    cell.borderColor = UIColorFromHex(rgbValue: 0x4060CC)
+                    cell.borderTop.backgroundColor = UIColorFromHex(rgbValue: 0x4060CC)
                 } else if(cell.boardCategoryLabel.text == "Leisure & Fun"){
                     cell.boardCategoryLabel.textColor = UIColorFromHex(rgbValue: 0x1EC68C)
                     cell.boardDescriptionLabel.textColor = UIColorFromHex(rgbValue: 0x1EC68C)
                     cell.boardCategoryIcon.image = UIImage(named: "fun-icon-color")
-                    cell.borderColor = UIColorFromHex(rgbValue: 0x1EC68C)
+                    cell.borderTop.backgroundColor = UIColorFromHex(rgbValue: 0x1EC68C)
                 } else if(cell.boardCategoryLabel.text == "Family"){
                     cell.boardCategoryLabel.textColor = UIColorFromHex(rgbValue: 0xF05765)
                     cell.boardDescriptionLabel.textColor = UIColorFromHex(rgbValue: 0xF05765)
                     cell.boardCategoryIcon.image = UIImage(named: "personal-dev-icon-color")
-                    cell.borderColor = UIColorFromHex(rgbValue: 0xF05765)
+                    cell.borderTop.backgroundColor = UIColorFromHex(rgbValue: 0xF05765)
                 }
             }
             return cell

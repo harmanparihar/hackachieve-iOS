@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class BoardCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var boardCategoryLabel: UILabel!
@@ -15,5 +16,9 @@ class BoardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var boardDescriptionLabel: UILabel!
     @IBOutlet weak var boardGoalsCompletedLabel: UILabel!
     @IBOutlet weak var deadlineLabel: UILabel!
+    
+    
+    @IBOutlet weak var borderTop: UIButton!
+    
     
 }

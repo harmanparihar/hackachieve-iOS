@@ -53,10 +53,17 @@ extension ColumnViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "columnCell", for: indexPath) as? ColumnCollectionViewCell{
             if(goal["title"] != nil){
                 cell.titleGoalLabel.text  = "\(goal["title"]!)"
-                cell.goalDescriptionLabel.text = "\(goal["description"]!)"
-                cell.dateGoalLabel.text = "\(String(describing: goal["deadline"]))"
+                if(goal["deadline"] != nil){
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
+                    let date = dateFormatter.date(from: String((goal["deadline"] as! String).prefix(10)))
+                    dateFormatter.dateFormat = "dd MMM"
+                    cell.dateGoalLabel.text = "\(dateFormatter.string(from: date!))"
+                }
+                cell.goalDescriptionLabel.text = "\((goal["description"] as! String).prefix(80))"
+                
             }
-            print("Type is \(self.boardTypeLabel.text)")
+            print("Type is \(String(describing: self.boardTypeLabel.text))")
             if(self.boardTypeLabel.text == "Health"){
                 self.view.backgroundColor = UIColorFromHex(rgbValue: 0x5FC9E0)
                 cell.backgroundColor = UIColorFromHex(rgbValue: 0x5FC9E0)
@@ -86,6 +93,20 @@ extension ColumnViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 self.boardCategoryIcon.image = UIImage(named: "personal-dev-icon")
                 cell.backgroundColor = UIColorFromHex(rgbValue: 0xF05765)
             }
+            if(goal["status"] != nil){
+                let status = goal["status"] as! Int
+                print("\(status)")
+                if( status == 3){
+                    cell.alpha = 0.5
+                }
+                if( status != 2){
+                    cell.backgroundColor = UIColor(red:0, green:0, blue:0, alpha:CGFloat(0.1))
+                    cell.dateGoalLabel.textColor =  UIColor(red:0, green:0, blue:0, alpha:CGFloat(0.9))
+                    cell.goalDescriptionLabel.textColor = UIColor(red:0, green:0, blue:0, alpha:CGFloat(0.9))
+                    cell.titleGoalLabel.textColor = UIColor(red:0, green:0, blue:0, alpha:CGFloat(0.9))
+                }
+            }
+            
             return cell
         }
         return UICollectionViewCell()
